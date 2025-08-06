@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>How much energy can I save with solar panels? – Unscripted Physics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bf47e37ca1c68f857eb640e2c1123e57.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Unscripted Physics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./vpython.html"> 
+<span class="menu-text">VPython</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./solar-panels.html" aria-current="page"> 
+<span class="menu-text">Solar panels</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#orientation-of-the-roof" id="toc-orientation-of-the-roof" class="nav-link active" data-scroll-target="#orientation-of-the-roof">Orientation of the roof</a></li>
+  <li><a href="#energy-collected-on-the-roof" id="toc-energy-collected-on-the-roof" class="nav-link" data-scroll-target="#energy-collected-on-the-roof">Energy collected on the roof</a></li>
+  <li><a href="#motion-of-the-sun-in-the-sky" id="toc-motion-of-the-sun-in-the-sky" class="nav-link" data-scroll-target="#motion-of-the-sun-in-the-sky">Motion of the Sun in the sky</a></li>
+  <li><a href="#modeling-the-weather-factor-zeta" id="toc-modeling-the-weather-factor-zeta" class="nav-link" data-scroll-target="#modeling-the-weather-factor-zeta">Modeling the weather factor <span class="math inline">\(\zeta\)</span></a></li>
+  <li><a href="#simulating-energy-collection" id="toc-simulating-energy-collection" class="nav-link" data-scroll-target="#simulating-energy-collection">Simulating Energy collection</a></li>
+  <li><a href="#energy-savings" id="toc-energy-savings" class="nav-link" data-scroll-target="#energy-savings">Energy savings</a></li>
+  <li><a href="#a-note-on-battery-storage" id="toc-a-note-on-battery-storage" class="nav-link" data-scroll-target="#a-note-on-battery-storage">A Note on Battery Storage</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">How much energy can I save with solar panels?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>First published: August 6th 2025</em><br> <em>Author: Pedro Cunha</em></p>
+<p>A friend of mine was considering installing solar panels on his roof, but was not sure how much electricity he could realistically save each year, and whether the investment would pay off. It is a common and practical question, yet getting a precise answer can be surprisingly tricky.</p>
+<p>While discussing it, I realised this was a great opportunity to approach a real-world problem from first principles to make meaningful predictions. This webpage is the result of that effort. It aims to be a transparent, technical, and pedagogical exploration of how much solar energy a rooftop can collect across the seasons, depending on location, weather, and orientation.</p>
+<p>The goal is not just to estimate savings, but to show <em>how</em> such estimates can be made, using an open approach that anyone with a scientific background can follow, verify, and build upon.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/solar_panel/kleines-hausmodell-mit-solarpanelen-auf-weissem-hintergrund_cc-by-20.jpg" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Image credit: <a href="https://ccnull.de/foto/kleines-hausmodell-mit-solarpanelen-auf-weissem-hintergrund/1102875/urkunde">Marco Verch</a>, <a href="https://creativecommons.org/licenses/by/2.0/de/deed.en">Creative commons license CC-BY 2.0</a>; No changes were made to this image.</figcaption>
+</figure>
+</div>
+<p><span class="math display">\[
+\]</span></p>
+<section id="orientation-of-the-roof" class="level2">
+<h2 class="anchored" data-anchor-id="orientation-of-the-roof">Orientation of the roof</h2>
+<p>The starting point is the layout and orientation of the roof, where the solar panels would be installed.<br>
+Below is a schematic drawing of my friend’s house, seen from the side (left panel) and from above (right panel).</p>
+<p><img src="images/solar_panel/house.png" alt="Sample" width="800px"></p>
+<p>The roof consists of two flat surfaces, which we will call <strong>Roof 1</strong> and <strong>Roof 2</strong>. Each roof section is inclined relative to the horizontal ground at an angle <span class="math inline">\(\delta\simeq 21^\circ\)</span>.</p>
+<p>The orientation of the house relative to the cardinal directions is captured by the angle <span class="math inline">\(\gamma\)</span>, which measures the deviation of the roof’s side from the North direction. This angle was measured using satellite images of the house. Both the North and West directions are represented by the unit vectors <span class="math inline">\(\hat{N}\)</span> and <span class="math inline">\(\hat{O}\)</span>, respectively, where <span class="math inline">\(\hat{O}\)</span> is perpendicular to <span class="math inline">\(\hat{N}\)</span>.</p>
+<p>Since <span class="math inline">\(\hat{N}\)</span> is a unit vector, its dot product with itself is one: <span class="math inline">\(\hat{N} \cdot \hat{N} = 1\)</span>. The same holds for <span class="math inline">\(\hat{O}\)</span> and any other unit vector.</p>
+<p>To fully describe the 3D orientation of the roofs, we also define a vertical unit vector <span class="math inline">\(\hat{n}\)</span>, which is perpendicular to the ground and orthogonal to both <span class="math inline">\(\hat{N}\)</span> and <span class="math inline">\(\hat{O}\)</span>. This forms a vector basis <span class="math inline">\(\{\hat{N}, \hat{O}, \hat{n}\}\)</span>, which is useful for expressing any vector in the local coordinate system.</p>
+<p>Each roof surface also has its own unit normal vector:</p>
+<ul>
+<li><strong>Roof 1</strong> is associated with <span class="math inline">\(\hat{T}_1\equiv \hat{T}_+\)</span></li>
+<li><strong>Roof 2</strong> is associated with <span class="math inline">\(\hat{T}_2\equiv \hat{T}_-\)</span></li>
+</ul>
+<p>These vectors point perpendicularly outward from the respective roof surfaces, and are illustrated in the diagram below.</p>
+<p><img src="images/solar_panel/roof.png" alt="Sample" width="600px"></p>
+<p>After some algebra, and using some basic vector decomposition, each normal vector <span class="math inline">\(\hat{T}_\pm\)</span> can be written as a linear combination of the basis vectors<span class="math inline">\(\{\hat{N},\hat{O},\hat{n}\}\)</span>:</p>
+<p><span class="math display">\[ \hat{T}_\pm = (\cos\delta)\, \hat{n} \,+\,(\mp \sin\delta\sin\gamma)\,\hat{N} \,+\, (\pm\sin\delta\cos\gamma)\,\hat{O}\,.\]</span></p>
+<p>This expression compactly encodes for each roof both the tilt angle <span class="math inline">\(\delta\)</span> and the orientation angle <span class="math inline">\(\gamma\)</span>, and will be useful in calculating the amount of sunlight that strikes each surface over time.</p>
+<p>To simplify the notation, we will omit the indices <span class="math inline">\(\{1,2\}\)</span> or <span class="math inline">\(\{+,-\}\)</span> and refer generically to the roof’s normal vector as <span class="math inline">\(\hat{T}\)</span>.</p>
+</section>
+<section id="energy-collected-on-the-roof" class="level2">
+<h2 class="anchored" data-anchor-id="energy-collected-on-the-roof">Energy collected on the roof</h2>
+<p>The next step is to estimate the <em>energy</em> <span class="math inline">\(E\)</span> collected by a solar panel installed on the roof.</p>
+<p>Consider a beam of sunlight arriving from the Sun, as illustrated in the figure below. <img src="images/solar_panel/radiation_roof.png" alt="Sample" width="600px"></p>
+<p>This beam transports an energy flux <span class="math inline">\(\varepsilon\)</span>, defined as the energy <span class="math inline">\(\mathcal{E}\)</span> delivered per unit time <span class="math inline">\(t\)</span> and per unit area <span class="math inline">\(\tilde{A}\)</span>, measured perpendicularly to the beam’s direction:</p>
+<p><span class="math display">\[ \frac{d\mathcal{E}}{dt\,d\tilde{A}}=\varepsilon\]</span></p>
+<p>However, the actual energy deposited on the roof depends on the angle between the incoming sunlight and the orientation of the roof surface. To account for this, we define a unit vector <span class="math inline">\(\hat{S}\)</span> pointing in the direction of the Sun.</p>
+<p>Since the solar panel lies flat on the roof, the relevant area for collecting sunlight is the projection of the beam’s cross-sectional area <span class="math inline">\(d\tilde{A}\)</span> onto the panel’s surface area <span class="math inline">\(dA\)</span>. This projection introduces a geometric correction given by the dot product between the roof’s unit normal vector <span class="math inline">\(\hat{T}\)</span> and the Sun’s direction <span class="math inline">\(\hat{S}\)</span>:</p>
+<p><span class="math display">\[ \frac{d\mathcal{E}}{dt\,dA}=\mu\,\varepsilon\,\hat{T}\cdot \hat{S}\]</span></p>
+<p>We have also introduced an additional factor <span class="math inline">\(\mu\)</span>, which acts as a switch, ensuring energy is only collected when sunlight is physically able to reach the panel. It is defined as:</p>
+<ul>
+<li><span class="math inline">\(\mu=0\,\,\)</span> if <span class="math inline">\(\,\,\hat{T}\cdot\hat{S}&lt;0\,\,\)</span>; sunlight is hitting the underside of the roof, which is not exposed to the Sun;</li>
+<li><span class="math inline">\(\mu=0\,\,\)</span> if <span class="math inline">\(\,\,\hat{n}\cdot\hat{S}&lt;0\,\,\)</span>; the Sun is below the horizon and so it is night time;</li>
+<li><span class="math inline">\(\mu=1\)</span> otherwise<span class="math inline">\(\,\,\)</span>; sunlight reaches the exposed surface of the roof.</li>
+</ul>
+<p>To estimate the energy flux <span class="math inline">\(\varepsilon\)</span> reaching the solar panel, we start with the fact that the solar energy arriving just above the Earth’s atmosphere is approximately uniform across the planet. After accounting for atmospheric attenuation, a <a href="https://en.wikipedia.org/wiki/Solar_irradiance#On_Earth's_surface">typical value</a> near the surface on a clear day is <span class="math inline">\(\varepsilon_o\simeq 1050 W/m^2\)</span>.</p>
+<p>However, local weather conditions, such as clouds, haze, or fog, can reduce the amount of sunlight that actually reaches the ground. To incorporate this variability, we introduce a weather factor <span class="math inline">\(\zeta(t) \in [0,1]\)</span>, which represents the fraction of solar energy transmitted through the atmosphere at a given time <span class="math inline">\(t\)</span>. On a clear day, <span class="math inline">\(\zeta \approx 1\)</span>, while on a heavily cloudy day <span class="math inline">\(\zeta\)</span> can be much smaller. The effective energy flux at the surface then becomes <span class="math inline">\(\varepsilon= \varepsilon_o\,\zeta\)</span>.</p>
+<p>Next, we must account for the fact that solar panels do not convert all the incident energy into electricity. Their performance is quantified by a conversion efficiency <span class="math inline">\(\eta \in [0,1]\)</span>, defined by the ratio <span class="math inline">\(E=\eta\,\mathcal{E}\)</span>, where <span class="math inline">\(\mathcal{E}\)</span> is the total incoming energy, and <span class="math inline">\(E\)</span> is the portion actually converted into usable electric energy.</p>
+<p>For typical commercial panels, the efficiency is around <span class="math inline">\(\eta \approx 0.17\)</span>, meaning about 17% of the incident energy is collected.</p>
+<p>Putting everything together, the total energy <span class="math inline">\(E\)</span> collected by a solar panel of surface area <span class="math inline">\(A\)</span> over the course of a day is given by: <span class="math display">\[ E = A\,\eta\,\varepsilon_o \int_{\textrm{day}} \mu(t)\,\zeta(t)\,\hat{T}\cdot\hat{S}(t)\,dt\]</span></p>
+<p>This expression accounts for:</p>
+<ul>
+<li>the orientation of the panel, via <span class="math inline">\(\hat{T} \cdot \hat{S}(t)\)</span>,</li>
+<li>the position of the Sun throughout the day, as captured by the time dependence of <span class="math inline">\(\hat{S}(t)\)</span>,</li>
+<li>the weather conditions, via <span class="math inline">\(\zeta(t)\)</span>,</li>
+<li>and the panel’s own conversion efficiency, <span class="math inline">\(\eta\)</span>.</li>
+</ul>
+<p>The factor <span class="math inline">\(\mu(t)\)</span>, as defined earlier, ensures that energy is only collected when the Sun is above the horizon and illuminating the panel.</p>
+<p>It remains to model both the weather factor <span class="math inline">\(\zeta(t)\)</span> and the Sun’s direction <span class="math inline">\(\hat{S}\)</span> throughout the year, for a given geographic location.</p>
+</section>
+<section id="motion-of-the-sun-in-the-sky" class="level2">
+<h2 class="anchored" data-anchor-id="motion-of-the-sun-in-the-sky">Motion of the Sun in the sky</h2>
+<p>To estimate how much sunlight reaches a solar panel at any given time, we need to understand how the Sun moves across the sky throughout the day and year. This motion can be modeled from first principles, starting with the Earth’s orbit around the Sun.</p>
+<p>Although the Earth orbits the Sun in an approximately circular path within a plane, known as the <em>solar orbital plane</em>. However, from an Earth-centered frame, the Sun seems to orbit with an angular velocity <span class="math inline">\(\Omega=2\pi/year\)</span> (see image below).</p>
+<p><img src="images/solar_panel/solar_orbit.png" alt="Sample" width="700px"></p>
+<p>We can begin by describing this apparent motion in a Cartesian coordinate system <span class="math inline">\((X,Y,Z)\)</span> aligned with the solar orbital plane and centered at the Earth’s center. In this coordinate system, the Sun’s unit direction vector, denoted by <span class="math inline">\(\hat{S}'\)</span>, evolves as: <span class="math display">\[
+\hat{S}'=\begin{pmatrix}
+\,\,\,\sin\Omega\,t\\
+-\cos\Omega\,t\\
+0
+\end{pmatrix}_{\textrm{Solar plane coord.}}
+\]</span> where the prime indicates that <span class="math inline">\(\hat{S}'\)</span> is expressed in the solar orbital plane frame. The time <span class="math inline">\(t=0\)</span> corresponds to the <a href="https://en.wikipedia.org/wiki/Apsis#Perihelion_and_aphelion">Perihelion</a>, which approximately corresponds to January 2nd.</p>
+<p>To express the Sun’s direction in the Earth-comoving frame, which is the one relevant for observers on the ground, we must apply two <a href="https://en.wikipedia.org/wiki/Active_and_passive_transformation">active rotations</a> to <span class="math inline">\(\hat{S}'\)</span>:</p>
+<ul>
+<li><p>Axial tilt: The Earth’s rotation axis is tilted by an angle <span class="math inline">\(\beta \approx 23.44^\circ\)</span> relative to the axis perpendicular to the solar plane. This is implemented via a rotation about the x-axis.</p></li>
+<li><p>Daily rotation: The Earth spins about its axis (the z-axis in our frame) with angular velocity <span class="math inline">\(\omega = 2\pi/\text{day}\)</span>, leading to the daily motion of the Sun across the sky, and also to the day-night cycle. This is a rotation about the z-axis.</p></li>
+</ul>
+<p>Combining these two transformations gives the Sun’s direction vector <span class="math inline">\(\hat{S}(t)\)</span> in the Earth-comoving frame: <span class="math display">\[ \hat{S} = \mathcal{R}_z(-\omega t)\,\,\mathcal{R}_x(\beta)\,\,\hat{S}'\,\]</span></p>
+<p>where <span class="math inline">\(\mathcal{R}_x(\theta)\)</span> and <span class="math inline">\(\mathcal{R}_z(\theta)\)</span> are standard <a href="https://en.wikipedia.org/wiki/Rotation_matrix">3D rotation matrices</a>:</p>
+<p><span class="math display">\[
+\mathcal{R}_x(\theta)=\begin{pmatrix}
+1 &amp; 0  &amp; 0\\
+0 &amp; \cos\theta  &amp; -\sin\theta\\
+0 &amp; \sin\theta  &amp; \,\,\cos\theta
+\end{pmatrix}
+\qquad\qquad
+\mathcal{R}_z(\theta)=\begin{pmatrix}
+\cos\theta  &amp; -\sin\theta &amp; 0\\
+\sin\theta  &amp; \,\,\cos\theta &amp; 0\\
+0 &amp; 0  &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p>To connect the Sun’s position to a specific location on Earth, such as a solar panel installation, we need to obtain the local directional vectors at that location. Consider the image below, which shows a representation of Earth’s comoving frame, and a pink point on the surface with latitude <span class="math inline">\(\alpha\)</span>, which is the house’s location. Since my friend’s house is located in the city of <a href="https://en.wikipedia.org/wiki/Coimbra">Coimbra</a>, we shall consider <span class="math inline">\(\alpha\simeq 40.21^\circ\)</span>.</p>
+<p><img src="images/solar_panel/earth_frame.png" alt="Sample" width="500px"></p>
+<p>The North and vertical vectors at the house location can then be obtained in this frame:</p>
+<ul>
+<li><p>The North direction <span class="math inline">\(\hat{N}\)</span> is obtained by rotating the vertical axis <span class="math inline">\(\hat{z}\)</span> (which points along the Earth’s spin axis) by the latitude angle <span class="math inline">\(\alpha\)</span>: <span class="math display">\[\hat{N}= \mathcal{R}_x(\alpha)\,\hat{z}=\mathcal{R}_x(\alpha)\,
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}\]</span></p></li>
+<li><p>The local vertical direction <span class="math inline">\(\hat{n}\)</span> (normal to the ground) is similarly given by rotating the <span class="math inline">\(y\)</span>-axis: <span class="math display">\[\hat{n}= \mathcal{R}_x(\alpha)\,\hat{y}=\mathcal{R}_x(\alpha)\,
+\begin{pmatrix}
+0\\
+1\\
+0
+\end{pmatrix}\]</span></p></li>
+<li><p>The West direction <span class="math inline">\(\hat{O}\)</span> is perpendicular to both <span class="math inline">\(\hat{n}\)</span> and <span class="math inline">\(\hat{N}\)</span> and is given by the cross product <span class="math inline">\(\hat{O}= \hat{n}\times \hat{N}\)</span>.</p></li>
+</ul>
+<p>These three vectors <span class="math inline">\(\{\hat{N}, \hat{O}, \hat{n}\}\)</span> define a local basis at the observation point, and allow us to compute all relevant dot products with the Sun vector <span class="math inline">\(\hat{S}\)</span>, such as those used in solar energy calculations.</p>
+<p>We now have a complete model of the Sun’s apparent motion in the sky as a function of time <span class="math inline">\(t\)</span>, from the perspective of a fixed observer located in the city of Coimbra. The figure below shows the Sun’s trajectory across the local sky throughout the year, above the horizon. <br></p>
+<p><img src="images/solar_panel/solar_path.png" alt="Sample" width="800px"></p>
+</section>
+<section id="modeling-the-weather-factor-zeta" class="level2">
+<h2 class="anchored" data-anchor-id="modeling-the-weather-factor-zeta">Modeling the weather factor <span class="math inline">\(\zeta\)</span></h2>
+<p>The next step is to model the weather factor <span class="math inline">\(\zeta(t)\)</span>, which is a time-dependent function that accounts for the reduction in solar radiation flux due to atmospheric absorption and scattering, such as from clouds, haze, or fog.</p>
+<p>Accurately modeling <span class="math inline">\(\zeta\)</span> is a challenging task, as it depends on complex, location-specific meteorological dynamics. However, we can still obtain a reasonable approximation using historical weather data.</p>
+<p>The website <a href="https://weatherspark.com/y/32332/Average-Weather-in-Coimbra-Portugal-Year-Round">Weather Spark</a> provides detailed climate statistics for the city of Coimbra, including the probability of cloud cover throughout the year. Using this data, I have constructed the following plot to represent an effective approximation of the weather factor over the course of the year:</p>
+<p><img src="images/solar_panel/weather.png" alt="Sample" width="800px"></p>
+<p>The plot is divided into five distinct regions, each corresponding to a different degree of cloudiness. The width of each region at a given point in the year reflects the probability of that type of weather occurring on any given day.</p>
+<p>For example, in January, the likelihood of having a very cloudy sky is high, which is why regions I and II (representing heavy cloud cover) dominate. In contrast, during August, the probability of clear skies is much greater, which is reflected by the large area occupied by region V.</p>
+<p>For each of the five weather regions (I to V), we assign an effective weather factor <span class="math inline">\(\zeta\)</span>, which quantifies the fraction of solar energy that reaches the Earth’s surface. These values range from 1.0 (100%) for clear skies to 0.0 (0%) for very thick and heavily clouded skies. While this approach is very simplified, it provides a reasonable approximation for our purposes.</p>
+<p>In practice, the value of <span class="math inline">\(\zeta\)</span> at any given time <span class="math inline">\(t\)</span> is determined stochastically: a region (I–V) is selected at random, with probability weights based on the seasonal cloud cover distribution shown in the previous plot. Once chosen, the corresponding <span class="math inline">\(\zeta\)</span> value is held constant over a 4-hour interval, reflecting the typical timescale over which local weather conditions remain stable. After each time interval, the process is repeated to update the value of <span class="math inline">\(\zeta\)</span>.</p>
+</section>
+<section id="simulating-energy-collection" class="level2">
+<h2 class="anchored" data-anchor-id="simulating-energy-collection">Simulating Energy collection</h2>
+<p>Now that we have the full setup, we can begin estimating how much solar energy each section of the roof can collect on a daily basis over the course of a typical year.</p>
+<p>In the plot below, the pink curve shows the daily energy (in kWh) collected by one square meter of solar panel installed on Roof 1. This curve incorporates stochastic weather variations, based on the probabilistic model discussed earlier.</p>
+<p><img src="images/solar_panel/power.png" alt="Sample" width="800px"></p>
+<p>For comparison, the green curve represents a smoothed estimate, computed using an effective average weather factor <span class="math inline">\(\zeta\)</span>. This average is obtained by weighting the typical values of <span class="math inline">\(\zeta\)</span> for each weather category (Regions I–V) according to their probability at a given time of year. As expected, this curve is much smoother and reflects the mean trend of solar energy collection.</p>
+<p>However, the pink curve exhibits significant fluctuations, which can have a substantial impact on the total energy accumulated over the year, and hence on the estimated energy savings. This highlights an important point:</p>
+<ul>
+<li>Relying solely on an average-weather model can significantly misrepresent the actual yearly savings, as it fails to account for the variability inherent in solar energy production.</li>
+</ul>
+<p>Nonetheless, the average-weather model remains useful to identify general trends. In particular, it reveals that Roof 1 consistently collects more solar energy than Roof 2, on average. This can be seen in the next plot, which shows the daily energy collected by each roof, assuming the effective average weather factor <span class="math inline">\(\zeta\)</span>.</p>
+<p><img src="images/solar_panel/power_roofs.png" alt="Sample" width="800px"></p>
+<p>Although this model smooths out short-term fluctuations, it provides a clear comparison between the two roof orientations and their overall performance in solar energy generation throughout the year.</p>
+</section>
+<section id="energy-savings" class="level2">
+<h2 class="anchored" data-anchor-id="energy-savings">Energy savings</h2>
+<p>Based on the previous simulations, roof 1 alone is expected to collect approximately 224 kWh per square meter over the course of a year. At a market electricity price of €0.17/kWh (VAT included), this translates to an estimated €38 of annual savings per square meter.</p>
+<p>Solar panels are typically sold as units. Assuming each panel covers 1.6 m<span class="math inline">\(^2\)</span>, installing 8 panels would correspond to about €487 in yearly energy savings, under ideal conditions where all the collected energy is consumed.</p>
+<p>However, in practice, not all the solar energy produced is used. The actual savings depend on the household’s daily consumption pattern. If energy is produced at a time when it is not being consumed, and if there is no way to store it, then it gets wasted.</p>
+<p>Using real electricity consumption data from the household in question, I have performed a more detailed analysis and found that, on average, around 33% of the energy collected would go unused due to this mismatch. Taking that into account, the effective annual savings drop to about €327 for 8 panels, which is still pretty good.</p>
+<p>Given an installation cost of approximately €3 500, this leads to a <strong>payback time of about 10 years</strong>.</p>
+<p>Considering that modern solar panels have a useful lifespan of around 26 years, this still results in <strong>over €5 000 of savings across the solar panels lifetime</strong>, which is a solid long-term investment.</p>
+</section>
+<section id="a-note-on-battery-storage" class="level2">
+<h2 class="anchored" data-anchor-id="a-note-on-battery-storage">A Note on Battery Storage</h2>
+<p>I also carried out an additional analysis to explore how these numbers would change when a battery storage system is included. A battery allows surplus solar energy to be stored and used later, potentially reducing losses.</p>
+<p>However, this improvement comes with trade-offs, since batteries have:</p>
+<ul>
+<li>limited storage capacity,</li>
+<li>finite charge/discharge rates,</li>
+<li>and, most importantly, fairly <em>high installation costs</em>.</li>
+</ul>
+<p>For the specific case analysed, the added savings from the battery system did not justify its cost, given current market prices. The overall system remained more cost-effective without it.</p>
+<p>To keep this webpage accessible and focused, I have chosen not to include the full technical details of the battery modeling and household energy usage analysis. However, if you are interested in a further details, whether you are from academia, the energy sector, or simply curious, feel free to get in touch. I would be happy to discuss the methodology further.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

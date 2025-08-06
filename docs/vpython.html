@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Physics Simulations using VPython – Unscripted Physics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-bf47e37ca1c68f857eb640e2c1123e57.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Unscripted Physics</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./vpython.html" aria-current="page"> 
+<span class="menu-text">VPython</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./solar-panels.html"> 
+<span class="menu-text">Solar panels</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
+  <li><a href="#vibrating-drum-membrane" id="toc-vibrating-drum-membrane" class="nav-link" data-scroll-target="#vibrating-drum-membrane">Vibrating drum membrane</a></li>
+  <li><a href="#ideal-gas" id="toc-ideal-gas" class="nav-link" data-scroll-target="#ideal-gas">Ideal gas</a></li>
+  <li><a href="#wave-diffraction-through-a-slit" id="toc-wave-diffraction-through-a-slit" class="nav-link" data-scroll-target="#wave-diffraction-through-a-slit">Wave diffraction through a slit</a></li>
+  <li><a href="#balls-with-springs" id="toc-balls-with-springs" class="nav-link" data-scroll-target="#balls-with-springs">Balls with springs</a></li>
+  <li><a href="#rotating-disk-and-cube" id="toc-rotating-disk-and-cube" class="nav-link" data-scroll-target="#rotating-disk-and-cube">Rotating disk and cube</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Physics Simulations using VPython</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><em>First published: August 6th 2025</em><br> <em>Author: Pedro Cunha</em></p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p>In <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/">this link</a> you can find a collection of simple numerical simulations I have built using Visual Python (<em>VPython</em>). They run directly in your browser, with no installation required!</p>
+<p>Below you can find a brief description of some simulations you will find there. These were originally built for teaching, exploration, or just for fun, and I hope others will find them useful or inspiring.</p>
+</section>
+<section id="vibrating-drum-membrane" class="level2">
+<h2 class="anchored" data-anchor-id="vibrating-drum-membrane">Vibrating drum membrane</h2>
+<p><img src="images/vpython/membrane.png" alt="Sample" width="300px"></p>
+<p>On this <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/membrana2">webpage</a> you will find an interactive simulation of a two-dimensional elastic membrane - like the surface of a vibrating drum.</p>
+<p>The model represents the membrane as a grid of mass points connected by elastic springs. Each point interacts only with its immediate neighbors, exerting vertical forces based on the difference in vertical displacement between them. This mimics the behavior of an elastic surface: you can think of it as vertical springs (satisfying <a href="https://en.wikipedia.org/wiki/Hooke%27s_law">Hooke’s law</a>) linking adjacent points on the surface.</p>
+<p>In the picture above the boundary of the surface is fixed, as it would be in a real drum. Even this simple discrete approximation leads to realistic and visually compelling oscillatory behavior.</p>
+<p>You can explore a variety of configurations on the <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/">main simulation page</a>, including different membrane shapes, oscillation modes, and boundary conditions - such as membranes with free edges.</p>
+</section>
+<section id="ideal-gas" class="level2">
+<h2 class="anchored" data-anchor-id="ideal-gas">Ideal gas</h2>
+<p><img src="images/vpython/gas.png" alt="Sample" width="300px"></p>
+<p>On this <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/gas">webpage</a> you can also find a simple simulation of a two-dimensional ideal gas confined in a circular container. The gas consists of many small particles (shown in gray), moving freely and bouncing off the green circular wall. The particles do not interact with each other - only with the container.</p>
+<p>Each time a particle hits the wall, it exerts a small force. When many particles collide over time, these tiny forces add up to produce a collective pressure on the wall. In this two-dimensional (2D) setup, the pressure has units of force per unit length (instead of force per area as in 3D), and it can be calculated by tracking the momentum transferred to the boundary during collisions.</p>
+<p>The speed of the particles is set according to the <a href="https://en.wikipedia.org/wiki/Equipartition_theorem">Equipartition Theorem</a>, which is a fundamental result from statistical physics. In a nutshell, this theorem tells us that, in thermal equilibrium, each degree of freedom contributes an average energy of <span class="math inline">\(kT/2\)</span>, where <span class="math inline">\(k\)</span> is the Boltzmann constant and <span class="math inline">\(T\)</span> is the temperature of the gas.</p>
+<p>In this case, the particles move only in two dimensions and do not rotate, and so they have two degrees of freedom (motion in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> directions). That means each particle carries an average kinetic energy of <span class="math inline">\(kT\)</span>.</p>
+<p>From this, we can find the average particle velocity <span class="math inline">\(v\)</span>: <span class="math display">\[ v=\sqrt{\frac{2kT}{m}}\,,\]</span> where <span class="math inline">\(m\)</span> is the mass of each particle. This equation links the microscopic motion of particles to the macroscopic concept of temperature. In the simulation we can numerically verify that the gas obeys the expected ideal gas law in two-dimensions: <span class="math display">\[PA = nkT\,,\]</span> where <span class="math inline">\(A\)</span> is the area of the circular container (the 2D analog of volume), and <span class="math inline">\(n\)</span> is the number of particles in the gas.</p>
+</section>
+<section id="wave-diffraction-through-a-slit" class="level2">
+<h2 class="anchored" data-anchor-id="wave-diffraction-through-a-slit">Wave diffraction through a slit</h2>
+<p><img src="images/vpython/diffraction.png" alt="Sample" width="500px"></p>
+<p>On this <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/Difracao">webpage</a> you will find a simple simulation of <a href="https://en.wikipedia.org/wiki/Diffraction">wave diffraction</a>, which is the bending and spreading of the wavefront as they pass through an opening. In this case, we model plane waves (like ripples on a lake surface) encountering a wall with a single narrow slit.</p>
+<p>For a bit of context, when a wave passes through a small aperture that is comparable in size to its wavelength, its wavefront no longer travels strictly in a straight line: instead, it spreads out in a circular pattern on the other side of the opening.</p>
+<p>In the simulation, we consider a 2D array of point particles (shown in yellow), which oscillate vertically. Each particle interacts elastically with its immediate neighbors, with the force it feels being proportional to the difference in vertical displacement between adjacent points. This simple setup mimics how disturbances propagate across a surface.</p>
+<p>We consider a plane wave traveling toward a white wall that blocks further propagation, except at a single slit in the center. The wave passes through this opening, producing circular wavefronts that radiate outward: a clear manifestation of diffraction in action.</p>
+<p>To help with the visualization, vertical displacements are coded via color: particles above the rest position are shown in red, and those below are blue. This makes the alternating wave crests and troughs easy to follow, and beautifully illustrates how a simple interaction rule gives rise to rich and familiar wave phenomena.</p>
+</section>
+<section id="balls-with-springs" class="level2">
+<h2 class="anchored" data-anchor-id="balls-with-springs">Balls with springs</h2>
+<p><img src="images/vpython/springs.png" alt="Sample" width="500px"></p>
+<p>This section explores simple mechanical systems involving masses connected to springs: simple classic setups that reveal surprisingly rich dynamics through basic principles.</p>
+<p>On <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/molasacopladas">this simulation webpage</a> two masses (represented by white spheres) are connected to three springs, with the outer ends of the springs anchored to fixed walls. The middle spring couples the motion of the two masses, so that when one oscillates, it influences the other.</p>
+<p>To introduce an asymmetry, the mass on the left is made ten times heavier than the one on the right. This difference in mass leads to uneven oscillatory behavior. The simulation illustrates features of coupled harmonic systems, in a clear and intuitive way.</p>
+<p>In another simulation, found <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/pendulo-mola">here</a>, a spring pendulum system is modeled, with a mass suspended from a fixed point by a spring, free to move in three dimensions.</p>
+<p>The dynamics of the spring pendulum combine both vertical spring oscillations and horizontal pendulum-like swings, resulting in a rich, coupled motion. A thin red line traces the path of the mass over time, which helps to visualize its trajectory. This classic system beautifully illustrates the complexity that can arise from simple forces acting in more than one direction.</p>
+</section>
+<section id="rotating-disk-and-cube" class="level2">
+<h2 class="anchored" data-anchor-id="rotating-disk-and-cube">Rotating disk and cube</h2>
+<p><img src="images/vpython/disk_cube.png" alt="Sample" width="300px"></p>
+<p>Rotating a rigid object is straightforward when the rotation happens around one of its symmetry axes. In such cases, the angular momentum <span class="math inline">\(\vec{L}\)</span> vector points in the same direction as the angular velocity <span class="math inline">\(\vec{\omega}\)</span>. But what happens when the rotation is not aligned with a symmetry axis?</p>
+<p>In general, a rigid body has different moments of inertia depending on the chosen axis of rotation. These moments are not necessarily the same in all directions. To capture this directional dependence, physicists use the moment of <a href="https://en.wikipedia.org/wiki/Moment_of_inertia">inertia tensor</a> <span class="math inline">\(I\)</span>, which is a mathematical object (specifically, a <span class="math inline">\(3\times3\)</span> matrix) that encodes how the body’s mass is distributed in space with respect to all possible rotational axes.</p>
+<p>The angular momentum <span class="math inline">\(\vec{L}\)</span> is related to the angular velocity <span class="math inline">\(\vec{\omega}\)</span> through the inertia tensor <span class="math inline">\(I\)</span> via: <span class="math display">\[ \vec{L} = I \,\vec{\omega}\,,\]</span></p>
+<p>In the generic case both <span class="math inline">\(\vec{L}\)</span> and <span class="math inline">\(\vec{\omega}\)</span> are vectors, and <span class="math inline">\(I\)</span> is a tensor (that can be expressed as a matrix), meaning that <span class="math inline">\(\vec{L}\)</span> and <span class="math inline">\(\vec{\omega}\)</span> might not be aligned.</p>
+<p>This has interesting consequences: even in the absence of external forces or torques, the angular velocity vector may precess (change direction), while the angular momentum remains constant in inertial space. This motion is characteristic of objects rotating around axes that are not principal axes of inertia.</p>
+<p>To visualize this, you can explore two examples of rigid body rotations in the following simulations:</p>
+<ul>
+<li>a spinning <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/disk">disk</a></li>
+<li>a spinning <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/cube">cube</a></li>
+</ul>
+<p>In both cases, the blue arrow represents the conserved angular momentum vector, while the object rotates in such a way that its angular velocity is not aligned with it. This illustrates how the dynamics of rigid body rotations can be unintuitive beyond simple symmetric cases.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
