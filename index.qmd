@@ -1,0 +1,43 @@
+---
+title: "Home"
+format: html
+---
+
+## Unscripted Physics
+*Explorations in physics, modeling, and curiosity*
+<br>
+
+<img src="images/img.png" alt="Sample" width="300px">
+
+Hi, and welcome to my website! 
+
+
+I have created this space to share ideas, models, and rough explorations that don't always fit neatly into scientific articles or proposals. Some are just things I was curious about. This is a collection of informal, yet serious, reflections and analyses driven by curiosity, mostly grounded in physics and math, and always shaped by the desire to understand the world a little better.
+
+At the heart of it is a love for modeling:  using simple principles to break down complex systems from our world into something more manageable, to get a better grasp on how things actually work.
+
+You can navigate the website and its contents using the menu above.
+
+The content here is not peer-reviewed and does not aim to be final. Some of it explores rough models or back-of-the-envelope estimates, or just rethinks problems just for the joy of it. Think of it as thoughtful sketchbook made public.
+
+If something here proves useful in your work, in your teaching or research - or if you have just any comments - feel free to reach out by email (**pvcunha@ua.pt**). If you end up using or building upon any of this material, I only ask that you give appropriate credit.
+
+Thanks for reading.
+
+
+*Pedro Cunha*
+
+
+
+<br>
+<br>
+
+## About the Author
+
+I am currently a postdoctoral researcher in theoretical physics, working primarily on black holes and gravity at the University of Aveiro.
+You can check my publications [in this link](https://inspirehep.net/authors/1505114?ui-citation-summary=true).
+If you would like to reach out, feel free to email me at **pvcunha@ua.pt**.
+
+
+
+

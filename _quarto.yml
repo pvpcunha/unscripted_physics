@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Unscripted Physics"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: VPython
+        href: vpython.qmd
+      - text: Solar panels
+        href: solar-panels.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
