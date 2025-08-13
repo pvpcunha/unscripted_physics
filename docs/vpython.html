@@ -148,7 +148,7 @@ window.Quarto = {
   <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a></li>
   <li><a href="#vibrating-drum-membrane" id="toc-vibrating-drum-membrane" class="nav-link" data-scroll-target="#vibrating-drum-membrane">Vibrating drum membrane</a></li>
   <li><a href="#ideal-gas" id="toc-ideal-gas" class="nav-link" data-scroll-target="#ideal-gas">Ideal gas</a></li>
-  <li><a href="#wave-diffraction-through-a-slit" id="toc-wave-diffraction-through-a-slit" class="nav-link" data-scroll-target="#wave-diffraction-through-a-slit">Wave diffraction through a slit</a></li>
+  <li><a href="#wave-diffraction-from-first-principles" id="toc-wave-diffraction-from-first-principles" class="nav-link" data-scroll-target="#wave-diffraction-from-first-principles">Wave diffraction from first principles</a></li>
   <li><a href="#balls-with-springs" id="toc-balls-with-springs" class="nav-link" data-scroll-target="#balls-with-springs">Balls with springs</a></li>
   <li><a href="#rotating-disk-and-cube" id="toc-rotating-disk-and-cube" class="nav-link" data-scroll-target="#rotating-disk-and-cube">Rotating disk and cube</a></li>
   </ul>
@@ -176,7 +176,7 @@ window.Quarto = {
 </header>
 
 
-<p><em>First published: August 6th 2025</em><br> <em>Author: Pedro Cunha</em></p>
+<p><em>First published: August 6th 2025</em><br> <em>Last version: August 13th 2025</em><br> <em>Author: Pedro Cunha</em></p>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"></h2>
 <p>In <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/">this link</a> you can find a collection of simple numerical simulations I have built using Visual Python (<em>VPython</em>). They run directly in your browser, with no installation required!</p>
@@ -199,8 +199,8 @@ window.Quarto = {
 <p>In this case, the particles move only in two dimensions and do not rotate, and so they have two degrees of freedom (motion in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> directions). That means each particle carries an average kinetic energy of <span class="math inline">\(kT\)</span>.</p>
 <p>From this, we can find the average particle velocity <span class="math inline">\(v\)</span>: <span class="math display">\[ v=\sqrt{\frac{2kT}{m}}\,,\]</span> where <span class="math inline">\(m\)</span> is the mass of each particle. This equation links the microscopic motion of particles to the macroscopic concept of temperature. In the simulation we can numerically verify that the gas obeys the expected ideal gas law in two-dimensions: <span class="math display">\[PA = nkT\,,\]</span> where <span class="math inline">\(A\)</span> is the area of the circular container (the 2D analog of volume), and <span class="math inline">\(n\)</span> is the number of particles in the gas.</p>
 </section>
-<section id="wave-diffraction-through-a-slit" class="level2">
-<h2 class="anchored" data-anchor-id="wave-diffraction-through-a-slit">Wave diffraction through a slit</h2>
+<section id="wave-diffraction-from-first-principles" class="level2">
+<h2 class="anchored" data-anchor-id="wave-diffraction-from-first-principles">Wave diffraction from first principles</h2>
 <p><img src="images/vpython/diffraction.png" alt="Sample" width="500px"></p>
 <p>On this <a href="https://www.glowscript.org/#/user/cunha.vpython/folder/MyPrograms/program/Difracao">webpage</a> you will find a simple simulation of <a href="https://en.wikipedia.org/wiki/Diffraction">wave diffraction</a>, which is the bending and spreading of the wavefront as they pass through an opening. In this case, we model plane waves (like ripples on a lake surface) encountering a wall with a single narrow slit.</p>
 <p>For a bit of context, when a wave passes through a small aperture that is comparable in size to its wavelength, its wavefront no longer travels strictly in a straight line: instead, it spreads out in a circular pattern on the other side of the opening.</p>
